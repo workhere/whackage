@@ -45,6 +45,8 @@
     "eslint-config-formidable": "^2.0.1",
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-filenames": "^1.1.0",
-    "eslint-plugin-import": "^2.2.0"
+    "eslint-plugin-import": "^2.2.0",
+    "read-pkg": "^2.0.0",
+		"read-pkg-up": "2.0.0"
   }
 }
