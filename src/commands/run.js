@@ -14,10 +14,12 @@ module.exports = function run({ npmScript }) {
   // blacklist dependencies' node modules to avoid @providesModule naming collisions
   const cliConfigPath = path.resolve(__dirname, '../packager/rn-cli.config.js');
 
+  process.env.WHACKAGE_CLI_CONFIG_PATH = cliConfigPath; // expose so scripts can use
+  
   commandExists('rsync', (error, rsyncExists) => {
     if (!error && rsyncExists) {
       startServer();
-      spawn('npm', [npmScript, '--', '--config', cliConfigPath], (code) => {
+      spawn('npm', ['run', npmScript], (code) => {
         process.exit(code);
       });
 
